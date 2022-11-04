@@ -8,7 +8,7 @@ Start commands:
 
 
 ### Link to the render server:
-https://f2wb59adhikari.onrender.com/ 
+https://f2db59adhikari.onrender.com/ 
 
 ### Class
 Class Name: Icecream <br>
