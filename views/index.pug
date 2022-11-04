@@ -1,0 +1,18 @@
+extends layout
+
+block content
+	h1= title
+	p This is #{title}. Welcome to my Webpage.
+	a(class='btn btn-primary' onclick="doBump()" type='button') Press Me
+	div(id='bump') Bump the count.
+	script.
+		let bump = 1;
+		let count=0 ;
+		function doBump() {
+			count = count + bump;
+			bump = bump + 1;
+			document.getElementById('bump').innerHTML = `Count ${count} with bump ${bump}`;
+		}
+	br
+	a(href="/icecream" type='button' class='btn btn-dark') Icecream
+	  

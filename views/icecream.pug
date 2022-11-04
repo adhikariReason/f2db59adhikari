@@ -1,0 +1,19 @@
+extends layout
+
+block content
+	h1= title
+	- let results = [{cone: "regular",flavour: "choc",numOfScoops: 2,},{cone: "waffle",flavour: "vanilla",numOfScoops: 1,}, {cone: "dipped",flavour: "strawberry",numOfScoops: 2,}];
+	div(class='container-fluid')
+		div(class='row')
+			- let item_num =0;
+			each items in results
+				-let item_des =""
+				each val, key in items
+					- item_des= `${item_des} ${key}: ${val}`
+				div(class='col-sm-2' type="button" onclick='buy()') #{item_des}
+				- item_num = item_num+1;
+	br
+	script.
+		function buy(){
+			alert(`You purchased an item`)
+		}
