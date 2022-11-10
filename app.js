@@ -19,7 +19,7 @@ var Icecream = require("./models/Icecream");
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var icecreamRouter = require('./routes/icecream.js');
+var icecreamRouter = require('./routes/icecream');
 var gridbuildRouter = require('./routes/gridbuild');
 var selectorRouter = require('./routes/selector');
 var resourceRouter = require('./routes/resource');
