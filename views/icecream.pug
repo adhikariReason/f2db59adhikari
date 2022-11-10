@@ -7,7 +7,7 @@ block content
 		div(class='row')
 			//- - let item_num =0;
 			each items in result
-				-let item_des = `Cone: ${items['cone']}     Flavour: ${items['flavour']} \n Num of Scoops: ${items['numOfScoops']}`
+				-let item_des = `Cone: ${items['cone']}Flavour: ${items['flavour']} \n Num of Scoops: ${items['numOfScoops']}`
 				//- each val, key in items
 				//- 	- item_des= `${item_des} ${key}: ${val}`
 				div(class='col-sm-2' type="button" onclick='buy()') #{item_des}
