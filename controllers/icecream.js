@@ -11,9 +11,16 @@ exports.icecream_list = async function(req, res) {
 	}
    };
 // for a specific Icecream.
-exports.icecream_detail = function(req, res) {
- res.send('NOT IMPLEMENTED: Icecream detail: ' + req.params.id);
-};
+exports.icecream_detail = async function(req, res) {
+	console.log("detail" + req.params.id)
+	try {
+		result = await Icecream.findById( req.params.id)
+		res.send(result)
+	} catch (error) {
+	res.status(500)
+	res.send(`{"error": document for id ${req.params.id} not found`);
+	}
+   };
 // Handle Icecream create on POST.
 exports.icecream_create_post = async function(req, res) {
 	console.log(req.body)
@@ -39,9 +46,22 @@ exports.icecream_delete = function(req, res) {
  res.send('NOT IMPLEMENTED: Icecream delete DELETE ' + req.params.id);
 };
 // Handle Icecream update form on PUT.
-exports.icecream_update_put = function(req, res) {
- res.send('NOT IMPLEMENTED: Icecream update PUT' + req.params.id);
-};
+exports.icecream_update_put = async function(req, res) {
+	console.log(`update on id ${req.params.id} with body ${JSON.stringify(req.body)}`)
+	try {
+		let toUpdate = await Icecream.findById( req.params.id)
+		// Do updates of properties
+		if(req.body.cone) toUpdate.cone = req.body.cone;
+		if(req.body.flavour) toUpdate.flavour = req.body.flavour;
+		if(req.body.numOfScoops) toUpdate.numOfScoops = req.body.numOfScoops;
+		let result = await toUpdate.save();
+		console.log("Sucess " + result)
+		res.send(result)
+	} catch (err) {
+		res.status(500)
+		res.send(`{"error": ${err}: Update for id ${req.params.id}failed`);
+	}
+   };
 
 // VIEWS
 // Handle a show all view
