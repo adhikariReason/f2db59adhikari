@@ -1,5 +1,6 @@
 body {
   padding: 50px;
+  background-color: rgb(193, 193, 193);
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -10,4 +11,16 @@ a {
 .icecreamAttr {
 	background-color: aquamarine;
 	width: 120px;
+}
+
+#extraLabel{
+	border: 2px dashed black;
+
+}
+
+#extraContent{
+	/* background-color: black; */
+	font-size: 20px;
+	color: white;
+	margin-bottom: 20px;
 }

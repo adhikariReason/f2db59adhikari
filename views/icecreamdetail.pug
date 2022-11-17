@@ -7,15 +7,19 @@ block content
   - let icecreamflavour = toShow.flavour
   - let icecreamnumOfScoops = toShow.numOfScoops
   div
+    br
     div.row
-      div(class='icecreamAttr mr-3') Icecream ID is:
-      div #{icecreamid}
+      div(id="extraLabel" class='icecreamAttr mr-3') Icecream ID is:
+      div(id="extraContent") #{icecreamid}
+      br
     div.row
-      div(class='icecreamAttr mr-3') Icecream Type is:
-      div #{icecreamcone}
+      div(id="extraLabel" class='icecreamAttr mr-3') Icecream Type is:
+      div(id="extraContent") #{icecreamcone}
+      br
     div.row
-      div(class='icecreamAttr mr-3') Icecream Size is:
-      div #{icecreamflavour}
+      div(id="extraLabel" class='icecreamAttr mr-3') Icecream Size is:
+      div(id="extraContent") #{icecreamflavour}
+      br
     div.row
-      div(class='icecreamAttr mr-3') Icecream Cost is:
-      div #{icecreamnumOfScoops}
+      div(id="extraLabel" class='icecreamAttr mr-3') Icecream Cost is:
+      div(id="extraContent") #{icecreamnumOfScoops}
