@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
-const costumeSchema = mongoose.Schema({
+const icecreamSchema = mongoose.Schema({
 	cone: String,
 	flavour: String,
 	numOfScoops:Number
 })
-module.exports = mongoose.model("Icecream",costumeSchema)
+module.exports = mongoose.model("Icecream",icecreamSchema)
