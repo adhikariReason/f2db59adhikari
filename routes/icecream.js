@@ -1,6 +1,7 @@
 var express = require('express');
 const icecream_controllers= require('../controllers/icecream');
 var router = express.Router();
+
 /* GET icecream */
 router.get('/', icecream_controllers.icecream_view_all_Page );
 
@@ -15,5 +16,9 @@ router.get('/update', icecream_controllers.icecream_update_Page);
 
 /* GET delete icecream page */
 router.get('/delete', icecream_controllers.icecream_delete_Page);
+
+router.get('/register', function(req, res) {
+	res.render('register', { title: 'Icecream App Registration'});
+   });
 
 module.exports = router;

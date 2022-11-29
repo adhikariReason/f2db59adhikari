@@ -4,16 +4,23 @@ block content
 	h1= title
 	- let result = results
 	div(class='container-fluid')
-		div(class='row')
-			//- - let item_num =0;
-			each items in result
-				-let item_des = `Cone: ${items['cone']}Flavour: ${items['flavour']} \n Num of Scoops: ${items['numOfScoops']}`
-				//- each val, key in items
-				//- 	- item_des= `${item_des} ${key}: ${val}`
-				div(class='col-sm-2' type="button" onclick='buy()') #{item_des}
-				//- - item_num = item_num+1;
+		div(class='row m-1')
+			//- //- - let item_num =0;
+			//- each items in result
+			//- 	-let item_des = `Cone: ${items['cone']}Flavour: ${items['flavour']} \n Num of Scoops: ${items['numOfScoops']}`
+			//- 	//- each val, key in items
+			//- 	//- 	- item_des= `${item_des} ${key}: ${val}`
+			//- 	div(class='col-sm-2' type="button" onclick='buy()') #{item_des}
+			//- 	//- - item_num = item_num+1;
+			each item in result
+				- let destination = `dispatch(\"/icecream/update?id=${item._id}\")`
+				div(class="row-sm-2", class="m-1") #{item.numOfScoops} Scoops of  Icecream with #{item.flavour}(#{item.cone}) flavour
+					button.btn(class="btn-primary ml-l", onclick=destination) Update
 	br
 	script.
 		function buy(){
 			alert(`You purchased an item`)
+		}
+		function dispatch(path){
+			window.location.href = path
 		}
