@@ -2,7 +2,7 @@ const mongoose = require("mongoose")
 const icecreamSchema = mongoose.Schema({
 	cone: {
 		type: String,
-		enum:["dipped", "regular", "iced", "fire"]
+		enum:["dipped", "regular", "iced", "fire"] 
 	},
 	flavour: String,
 	numOfScoops:{
