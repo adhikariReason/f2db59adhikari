@@ -1,5 +1,6 @@
 extends layout
 block content
+  div(id="error") 
   h1= title
   - let icecreamid = toShow._id
   - let icecreamcone = toShow.cone
@@ -35,6 +36,8 @@ block content
         // TODO handle body
       }).catch((error) => {
         // TODO handle error
-        alert("Update failed " + error )
+
+        alert("Invalid numer of scoops: Number of scoops should be between 1 and 50\n\n\n" + "Update failed " + error );
+        document.getElementById("error").innerHTML = "invalid number of scoops"
       });
     });

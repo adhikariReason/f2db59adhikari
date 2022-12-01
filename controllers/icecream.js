@@ -57,14 +57,16 @@ exports.icecream_update_put = async function(req, res) {
 	try {
 		let toUpdate = await Icecream.findById( req.params.id)
 		// Do updates of properties
-		if(req.body.cone) toUpdate.cone = req.body.cone;
-		if(req.body.flavour) toUpdate.flavour = req.body.flavour;
-		if(req.body.numOfScoops) toUpdate.numOfScoops = req.body.numOfScoops;
+		if(req.body.icecreamcone) toUpdate.cone = req.body.icecreamcone;
+		if(req.body.icecreamflavour) toUpdate.flavour = req.body.icecreamflavour;
+		console.log("check1"+ req.body.numOfScoops)
+		if(req.body.icecreamnumOfScoops) toUpdate.numOfScoops = req.body.icecreamnumOfScoops;
 		let result = await toUpdate.save();
 		console.log("Sucess " + result)
 		res.send(result)
 	} catch (err) {
 		res.status(500)
+		// alert("Invalid numer of scoops")
 		res.send(`{"error": ${err}: Update for id ${req.params.id}failed`);
 	}
    };
